@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-01T07:59:01.124Z</updated>
+  <updated>2017-03-01T10:41:41.212Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://yoursite.com/2017/03/01/MultipleSShInHexo/"/>
     <id>http://yoursite.com/2017/03/01/MultipleSShInHexo/</id>
     <published>2017-03-01T07:47:09.513Z</published>
-    <updated>2017-03-01T07:59:01.124Z</updated>
+    <updated>2017-03-01T10:41:41.212Z</updated>
     
-    <content type="html"><![CDATA[<p>����һ���򵥵Ĳ��ԣ�</p>
+    <content type="html"><![CDATA[<p>This is a Test! I love you TC!</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;����һ���򵥵Ĳ��ԣ�&lt;/p&gt;
+      &lt;p&gt;This is a Test! I love you TC!&lt;/p&gt;
 
     
     </summary>
