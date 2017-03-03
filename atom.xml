@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>LiBai&#39;s Blog</title>
-  
+  <title>罗夏Blog</title>
+  <subtitle>可能是一个假的程序猿</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://libaicode.com/"/>
   <updated>2017-03-02T10:01:12.457Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://libaicode.com/</id>
   
   <author>
     <name>Xiang Chen</name>
-    
+    <email>Prettydied@gmail.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/03/02/Hexo_blog_2/"/>
-    <id>http://yoursite.com/2017/03/02/Hexo_blog_2/</id>
+    <link href="http://libaicode.com/2017/03/02/Hexo_blog_2/"/>
+    <id>http://libaicode.com/2017/03/02/Hexo_blog_2/</id>
     <published>2017-03-02T10:00:57.497Z</published>
     <updated>2017-03-02T10:01:12.457Z</updated>
     
@@ -37,8 +37,8 @@
   
   <entry>
     <title>多git账户情况下Hexo博客部署</title>
-    <link href="http://yoursite.com/2017/03/02/Hexo_blog_3/"/>
-    <id>http://yoursite.com/2017/03/02/Hexo_blog_3/</id>
+    <link href="http://libaicode.com/2017/03/02/Hexo_blog_3/"/>
+    <id>http://libaicode.com/2017/03/02/Hexo_blog_3/</id>
     <published>2017-03-02T08:21:42.000Z</published>
     <updated>2017-03-03T05:04:26.701Z</updated>
     
