@@ -3,16 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: LiBai's Blog
-subtitle: 
-description: Write the same code as poems
+title: 罗夏Blog
+subtitle: 可能是一个假的程序猿
+description: 我醉欲眠卿且去，明朝有意抱琴来
 author: Xiang Chen
+email: Prettydied@gmail.com
 language: zh-Hans
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://libaicode.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -71,3 +72,6 @@ deploy:
   type: git
   repo: git@libaicTwo.github.com:LiBaiC/libaic.github.io.git
   branch: master
+
+#Avatar
+avatar: https://cl.ly/1A0T041q1746/39_0_1447173451_8419.jpg
