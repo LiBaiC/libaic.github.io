@@ -75,3 +75,13 @@ deploy:
 
 #Avatar
 avatar: https://cl.ly/1A0T041q1746/39_0_1447173451_8419.jpg
+
+#jiathis 分享服务
+jiathis: true
+
+#Local Search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
