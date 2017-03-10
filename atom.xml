@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://libaicode.com/"/>
-  <updated>2017-03-10T03:52:12.134Z</updated>
+  <updated>2017-03-10T09:50:00.761Z</updated>
   <id>http://libaicode.com/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UE4的一些笔记</title>
+    <link href="http://libaicode.com/2017/03/10/SGameNote/"/>
+    <id>http://libaicode.com/2017/03/10/SGameNote/</id>
+    <published>2017-03-10T09:45:42.000Z</published>
+    <updated>2017-03-10T09:50:00.761Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="UE4的一些笔记"><a href="#UE4的一些笔记" class="headerlink" title="#UE4的一些笔记"></a>#UE4的一些笔记</h2><p>##Git Repo</p>
+<ul>
+<li>GitHub    私有库收费，速度可以</li>
+<li>BitBucket 私有库免费，速度一般</li>
+</ul>
+<p>##Game Framework<br><img src="https://cl.ly/1a2T2O1A3w1U/1.png" alt="概图"></p>
+<ol>
+<li><p>Actor</p>
+</li>
+<li><p>Components<br> A.提供给Actor重复使用。<br> B.列如 Scene Component(变换矩阵等),粒子组件<br> C.以及一系列事件 exp:Hit/Begin Overlap etc..</p>
+</li>
+<li><p>Pawn  玩家<br> 没有movement和input code</p>
+</li>
+<li><p>Controller<br> Pawn的灵魂..负责控制Player或者AI等</p>
+</li>
+<li><p>Character<br> 特殊的Pawn,Pawn添加了一系列component 可以移动等            </p>
+</li>
+<li><p>HUD<br> 游戏内的UI</p>
+</li>
+<li><p>GameMode<br> A. 游戏的核心<br> B. 包含Pawn,Controller,HUD,etc..<br> c. 可以在任何地方访问通过GetGameMode           </p>
+</li>
+<li><p>Other Important Concepts<br> A. Input<br> B. Collision<br> C. Replication                                                </p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;UE4的一些笔记&quot;&gt;&lt;a href=&quot;#UE4的一些笔记&quot; class=&quot;headerlink&quot; title=&quot;#UE4的一些笔记&quot;&gt;&lt;/a&gt;#UE4的一些笔记&lt;/h2&gt;&lt;p&gt;##Git Repo&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub    私有库收费，速度可以
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>公开课</title>
