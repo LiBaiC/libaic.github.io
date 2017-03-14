@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://libaicode.com/"/>
-  <updated>2017-03-10T09:50:00.761Z</updated>
+  <updated>2017-03-14T10:20:37.879Z</updated>
   <id>http://libaicode.com/</id>
   
   <author>
@@ -16,18 +16,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于设计模式</title>
+    <link href="http://libaicode.com/2017/03/14/DPNoteChapter01/"/>
+    <id>http://libaicode.com/2017/03/14/DPNoteChapter01/</id>
+    <published>2017-03-14T10:18:42.000Z</published>
+    <updated>2017-03-14T10:20:37.879Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="设计模式笔记"><a href="#设计模式笔记" class="headerlink" title="设计模式笔记"></a>设计模式笔记</h1><hr>
+<h2 id="1-策略模式"><a href="#1-策略模式" class="headerlink" title="1. 策略模式"></a>1. 策略模式</h2><p>策略模式定义了算法族,分别封装起来,让他们之间可以互相替换,此模式让算法的变化独立于使用算法的客户</p>
+<h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><ol>
+<li>找出应用中可能需要变化之处,把它们独立出来,不要和那些不需要的变化的代码混在一起</li>
+<li>针对接口编程,而不是针对实现编程</li>
+<li>多用组合,少用继承</li>
+</ol>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span>  </span></div><div class="line">&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> <span class="keyword">throws</span> java.lang.Exception</span></div><div class="line">	&#123;</div><div class="line">		MallarDuck md = <span class="keyword">new</span>  MallarDuck();</div><div class="line">		md.PerformFly();</div><div class="line">		md.SettingFly(<span class="keyword">new</span> FlyNoWay());</div><div class="line">		md.PerformFly();</div><div class="line">		md.Display();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">FlyBehavior</span></span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Fly</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlyWithWings</span> <span class="keyword">implements</span> <span class="title">FlyBehavior</span></span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Fly</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"FlyWithWings"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlyNoWay</span> <span class="keyword">implements</span> <span class="title">FlyBehavior</span></span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Fly</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"FlyNoWay"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Duck</span></span></div><div class="line">&#123;</div><div class="line">    FlyBehavior myFlyBehavior;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PerformFly</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        myFlyBehavior.Fly();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SettingFly</span><span class="params">(FlyBehavior fb)</span></span></div><div class="line">    &#123;</div><div class="line">        myFlyBehavior = fb;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MallarDuck</span> <span class="keyword">extends</span> <span class="title">Duck</span></span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MallarDuck</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        myFlyBehavior = <span class="keyword">new</span> FlyWithWings();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Display</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"I'm real mallarDuck!"</span>);    </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;设计模式笔记&quot;&gt;&lt;a href=&quot;#设计模式笔记&quot; class=&quot;headerlink&quot; title=&quot;设计模式笔记&quot;&gt;&lt;/a&gt;设计模式笔记&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;1-策略模式&quot;&gt;&lt;a href=&quot;#1-策略模式&quot; class=&quot;headerlink&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>UE4的一些笔记</title>
     <link href="http://libaicode.com/2017/03/10/SGameNote/"/>
     <id>http://libaicode.com/2017/03/10/SGameNote/</id>
     <published>2017-03-10T09:45:42.000Z</published>
-    <updated>2017-03-10T09:50:00.761Z</updated>
+    <updated>2017-03-14T10:21:15.868Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="UE4的一些笔记"><a href="#UE4的一些笔记" class="headerlink" title="#UE4的一些笔记"></a>#UE4的一些笔记</h2><p>##Git Repo</p>
-<ul>
+    <content type="html"><![CDATA[<h1 id="UE4的一些笔记"><a href="#UE4的一些笔记" class="headerlink" title="UE4的一些笔记"></a>UE4的一些笔记</h1><hr>
+<h2 id="Git-Repo"><a href="#Git-Repo" class="headerlink" title="Git Repo"></a>Git Repo</h2><ul>
 <li>GitHub    私有库收费，速度可以</li>
 <li>BitBucket 私有库免费，速度一般</li>
 </ul>
-<p>##Game Framework<br><img src="https://cl.ly/1a2T2O1A3w1U/1.png" alt="概图"></p>
+<h2 id="Game-Framework"><a href="#Game-Framework" class="headerlink" title="Game Framework"></a>Game Framework</h2><p><img src="https://cl.ly/1a2T2O1A3w1U/1.png" alt="概图"></p>
 <ol>
 <li><p>Actor</p>
 </li>
@@ -50,9 +77,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;UE4的一些笔记&quot;&gt;&lt;a href=&quot;#UE4的一些笔记&quot; class=&quot;headerlink&quot; title=&quot;#UE4的一些笔记&quot;&gt;&lt;/a&gt;#UE4的一些笔记&lt;/h2&gt;&lt;p&gt;##Git Repo&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GitHub    私有库收费，速度可以
+      &lt;h1 id=&quot;UE4的一些笔记&quot;&gt;&lt;a href=&quot;#UE4的一些笔记&quot; class=&quot;headerlink&quot; title=&quot;UE4的一些笔记&quot;&gt;&lt;/a&gt;UE4的一些笔记&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;Git-Repo&quot;&gt;&lt;a href=&quot;#Git-Repo&quot; class=
     
     </summary>
     
@@ -64,11 +90,9 @@
     <link href="http://libaicode.com/2017/03/10/course_20170310/"/>
     <id>http://libaicode.com/2017/03/10/course_20170310/</id>
     <published>2017-03-10T04:01:42.000Z</published>
-    <updated>2017-03-10T03:52:12.134Z</updated>
+    <updated>2017-03-14T10:21:26.435Z</updated>
     
-    <content type="html"><![CDATA[<p>#公开课</p>
-<p>###最近发现两个不错的公开课网站，如果你英语不错一起加入吧</p>
-<ol>
+    <content type="html"><![CDATA[<h1 id="公开课"><a href="#公开课" class="headerlink" title="公开课"></a>公开课</h1><h3 id="最近发现两个不错的公开课网站，如果你英语不错一起加入吧"><a href="#最近发现两个不错的公开课网站，如果你英语不错一起加入吧" class="headerlink" title="最近发现两个不错的公开课网站，如果你英语不错一起加入吧"></a>最近发现两个不错的公开课网站，如果你英语不错一起加入吧</h3><ol>
 <li><em>cousera</em>      <a href="https://www.coursera.org" target="_blank" rel="external">https://www.coursera.org</a></li>
 <li><em>codecademy</em>   <a href="https://www.codecademy.com" target="_blank" rel="external">https://www.codecademy.com</a></li>
 </ol>
@@ -76,10 +100,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;#公开课&lt;/p&gt;
-&lt;p&gt;###最近发现两个不错的公开课网站，如果你英语不错一起加入吧&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;em&gt;cousera&lt;/em&gt;      &lt;a href=&quot;https://www.coursera.org&quot; target=&quot;_blank&quot; rel=&quot;ext
+      &lt;h1 id=&quot;公开课&quot;&gt;&lt;a href=&quot;#公开课&quot; class=&quot;headerlink&quot; title=&quot;公开课&quot;&gt;&lt;/a&gt;公开课&lt;/h1&gt;&lt;h3 id=&quot;最近发现两个不错的公开课网站，如果你英语不错一起加入吧&quot;&gt;&lt;a href=&quot;#最近发现两个不错的公开课网站，如果你英语不错
     
     </summary>
     
@@ -91,14 +112,16 @@
     <link href="http://libaicode.com/2017/03/03/Hexo_blog_4/"/>
     <id>http://libaicode.com/2017/03/03/Hexo_blog_4/</id>
     <published>2017-03-03T04:52:22.000Z</published>
-    <updated>2017-03-10T03:52:55.417Z</updated>
+    <updated>2017-03-14T10:21:06.893Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Test"><a href="#Test" class="headerlink" title="#Test"></a>#Test</h2><p>This is test.</p>
+    <content type="html"><![CDATA[<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><hr>
+<p>This is test.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Test&quot;&gt;&lt;a href=&quot;#Test&quot; class=&quot;headerlink&quot; title=&quot;#Test&quot;&gt;&lt;/a&gt;#Test&lt;/h2&gt;&lt;p&gt;This is test.&lt;/p&gt;
+      &lt;h1 id=&quot;Test&quot;&gt;&lt;a href=&quot;#Test&quot; class=&quot;headerlink&quot; title=&quot;Test&quot;&gt;&lt;/a&gt;Test&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;This is test.&lt;/p&gt;
 
     
     </summary>
@@ -111,29 +134,28 @@
     <link href="http://libaicode.com/2017/03/02/Hexo_blog_3/"/>
     <id>http://libaicode.com/2017/03/02/Hexo_blog_3/</id>
     <published>2017-03-02T08:21:42.000Z</published>
-    <updated>2017-03-03T05:04:26.701Z</updated>
+    <updated>2017-03-14T10:20:56.142Z</updated>
     
-    <content type="html"><![CDATA[<p>#问题<br>最近在使用Hexo搭建博客时碰到很多问题，其中之一便是如果之前PC终端已使用git搭建过博客，现在需要在同一台终端上使用不同的git账户再搭建博客，就会在部署时<br> <img src="https://cl.ly/382R3o3v0U3g/1.png" alt="hexod"><br>提示<br>ERROR: Permission to A/A.github.com.git denied to B.<br>导致失败。</p>
+    <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近在使用Hexo搭建博客时碰到很多问题，其中之一便是如果之前PC终端已使用git搭建过博客，现在需要在同一台终端上使用不同的git账户再搭建博客，就会在部署时<br> <img src="https://cl.ly/382R3o3v0U3g/1.png" alt="hexod"><br>提示<br>ERROR: Permission to A/A.github.com.git denied to B.<br>导致失败。</p>
 <hr>
-<p>#解决办法</p>
-<ul>
-<li><p>#####1 首先取消git全局设置，输入这两条命令<br><img src="https://cl.ly/16293L0h0Q3f/2.png" alt="unset"></p>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><ul>
+<li><h5 id="1-首先取消git全局设置，输入这两条命令"><a href="#1-首先取消git全局设置，输入这两条命令" class="headerlink" title="1 首先取消git全局设置，输入这两条命令"></a>1 首先取消git全局设置，输入这两条命令</h5><p><img src="https://cl.ly/16293L0h0Q3f/2.png" alt="unset"></p>
 </li>
-<li><p>#####2 添加新的Shh配置<br><img src="https://cl.ly/1N330B1W1W0o/3.png" alt="pic4"><br>之后会提示你输入文件名，区别第一个默认名称“id_rsa”就可以,假设为“id_rsa_B”。把新生成的公钥加入到你第二个git账号。</p>
+<li><h5 id="2-添加新的Shh配置"><a href="#2-添加新的Shh配置" class="headerlink" title="2 添加新的Shh配置"></a>2 添加新的Shh配置</h5><p><img src="https://cl.ly/1N330B1W1W0o/3.png" alt="pic4"><br>之后会提示你输入文件名，区别第一个默认名称“id_rsa”就可以,假设为“id_rsa_B”。把新生成的公钥加入到你第二个git账号。</p>
 </li>
-<li><p>#####3 如果c:\Users\yourname.ssh 目录下没有config文件，新建一个<br><img src="https://cl.ly/0n2g1T1H3g3O/4.png" alt="pic4"><br>打开config文件，进行配置<br><img src="https://cl.ly/1m0Q3m3Y3U2G/5.png" alt="pic4"></p>
+<li><h5 id="3-如果c-Users-yourname-ssh-目录下没有config文件，新建一个"><a href="#3-如果c-Users-yourname-ssh-目录下没有config文件，新建一个" class="headerlink" title="3 如果c:\Users\yourname.ssh 目录下没有config文件，新建一个"></a>3 如果c:\Users\yourname.ssh 目录下没有config文件，新建一个</h5><p><img src="https://cl.ly/0n2g1T1H3g3O/4.png" alt="pic4"><br>打开config文件，进行配置<br><img src="https://cl.ly/1m0Q3m3Y3U2G/5.png" alt="pic4"></p>
 </li>
-<li><p>#####4 进入你部署博客根目录，打开_config.yml文件，修改Repository，变为<br><img src="https://cl.ly/2D1s1G3a1o2K/6.png" alt="pic4"></p>
+<li><h5 id="4-进入你部署博客根目录，打开-config-yml文件，修改Repository，变为"><a href="#4-进入你部署博客根目录，打开-config-yml文件，修改Repository，变为" class="headerlink" title="4 进入你部署博客根目录，打开_config.yml文件，修改Repository，变为"></a>4 进入你部署博客根目录，打开_config.yml文件，修改Repository，变为</h5><p><img src="https://cl.ly/2D1s1G3a1o2K/6.png" alt="pic4"></p>
 </li>
 <li><p>#####5 进入git bash按原流程重新提交部署，你会发现需要第二个秘钥”id_rsa_B”的密码<br><img src="https://cl.ly/382R3o3v0U3g/1.png" alt="hexod"></p>
 </li>
 </ul>
-<p>#原因<br>我们可以发现 ssh 客户端是通过类似: git@github.com:A/A.github.com.git 这样的 git 地址中的 User 和 Host 来识别使用哪个本地私钥的。 很明显，如果 User 和 Host 始终为 git 和 github.com，那么就只能使用一个私钥。 所以需要上面的方式配置，每个账号使用了自己的 Host，每个 Host 的域名做 CNAME 解析到 github.com，这样 ssh 在连接时就可以区别不同的账号了。</p>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>我们可以发现 ssh 客户端是通过类似: git@github.com:A/A.github.com.git 这样的 git 地址中的 User 和 Host 来识别使用哪个本地私钥的。 很明显，如果 User 和 Host 始终为 git 和 github.com，那么就只能使用一个私钥。 所以需要上面的方式配置，每个账号使用了自己的 Host，每个 Host 的域名做 CNAME 解析到 github.com，这样 ssh 在连接时就可以区别不同的账号了。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;#问题&lt;br&gt;最近在使用Hexo搭建博客时碰到很多问题，其中之一便是如果之前PC终端已使用git搭建过博客，现在需要在同一台终端上使用不同的git账户再搭建博客，就会在部署时&lt;br&gt; &lt;img src=&quot;https://cl.ly/382R3o3v0U3g/1.png&quot; a
+      &lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;最近在使用Hexo搭建博客时碰到很多问题，其中之一便是如果之前PC终端已使用git搭建过博客，现在需要在同一台终端上使用不同的git账户再搭
     
     </summary>
     
