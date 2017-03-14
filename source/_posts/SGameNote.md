@@ -2,13 +2,13 @@
 title: UE4的一些笔记
 date: 2017-03-10 17:45:42
 ---
-#UE4的一些笔记
+# UE4的一些笔记
 ---
-##Git Repo
+## Git Repo
 - GitHub    私有库收费，速度可以
 - BitBucket 私有库免费，速度一般
 
-##Game Framework
+## Game Framework
 ![概图](https://cl.ly/1a2T2O1A3w1U/1.png)
 
 1. Actor
