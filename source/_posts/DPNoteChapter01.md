@@ -83,4 +83,109 @@ date: 2017-03-14 18:18:42
 	    }
 	}
 ```
+---
+## 2. 观察者模式
+定义了对象之间的一对多依赖,这样一来,当一个对象改变状态时,他的所有依赖者都会收到通知并自动更新
 
+### 设计原则
+
+1. 为了交互对象之间的松耦合设计而努力
+
+#### 例子
+```java
+
+import java.util.*;
+ interface Observer {
+	public void update(float temp, float humidity, float pressure);
+}
+
+interface DisplayElement {
+	public void display();
+}
+
+interface Subject {
+	public void registerObserver(Observer o);
+	public void removeObserver(Observer o);
+	public void notifyObservers();
+}
+
+class WeatherData implements Subject {
+	private ArrayList<Observer> observers;
+	private float temperature;
+	private float humidity;
+	private float pressure;
+	
+	public WeatherData() {
+		observers = new ArrayList<Observer>();
+	}
+	
+	public void registerObserver(Observer o) {
+		observers.add(o);
+	}
+	
+	public void removeObserver(Observer o) {
+		int i = observers.indexOf(o);
+		if (i >= 0) {
+			observers.remove(i);
+		}
+	}
+	
+	public void notifyObservers() {
+		for (Observer observer : observers) {
+			observer.update(temperature, humidity, pressure);
+		}
+	}
+	
+	public void measurementsChanged() {
+		notifyObservers();
+	}
+	
+	public void setMeasurements(float temperature, float humidity, float pressure) {
+		this.temperature = temperature;
+		this.humidity = humidity;
+		this.pressure = pressure;
+		measurementsChanged();
+	}
+
+}
+
+
+
+class CurrentConditionsDisplay implements Observer, DisplayElement {
+	private float temperature;
+	private float humidity;
+	private Subject weatherData;
+	
+	public CurrentConditionsDisplay(Subject weatherData) {
+		this.weatherData = weatherData;
+		weatherData.registerObserver(this);
+	}
+	
+	public void update(float temperature, float humidity, float pressure) {
+		this.temperature = temperature;
+		this.humidity = humidity;
+		display();
+	}
+	
+	public void display() {
+		System.out.println("Current conditions: " + temperature 
+			+ "F degrees and " + humidity + "% humidity");
+	}
+}
+
+
+class WeatherStation {
+
+	public static void main(String[] args) {
+		WeatherData weatherData = new WeatherData();
+	
+		CurrentConditionsDisplay currentDisplay = 
+			new CurrentConditionsDisplay(weatherData);
+
+		weatherData.setMeasurements(80, 65, 30.4f);
+		weatherData.setMeasurements(82, 70, 29.2f);
+		weatherData.setMeasurements(78, 90, 29.2f);
+	}
+}
+
+```
