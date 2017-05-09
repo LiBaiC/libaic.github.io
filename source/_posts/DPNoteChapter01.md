@@ -5,7 +5,7 @@ date: 2017-03-14 18:18:42
 
 # 设计模式笔记
 ---
-
+下面列子出于 HeadFrist 设计模式一书，算是一点总结。
 
 ## 1. 策略模式
 策略模式定义了算法族,分别封装起来,让他们之间可以互相替换,此模式让算法的变化独立于使用算法的客户
@@ -191,7 +191,156 @@ class WeatherStation {
 ```
 
 ## 装饰模式
-
+动态地将责任附加到对象上。若要扩展功能，装饰着提供了比继承更有弹性的替代方案。
 
 ### 设计原则
 1. 类对扩张开放,对修改关闭
+
+####例子
+``` java
+import java.io.*;
+import java.util.*;
+
+//超类饮料
+ abstract class Beverage
+{
+    String description = "UnKnow Beverage";
+    
+    public String GetDescription()
+    {
+        return description;
+    }
+    
+    public abstract double cost();
+    
+}
+
+//装饰着类 对饮料类进行装饰
+ abstract class CondimentDecorator extends Beverage
+{
+    public abstract String GetDescription();
+}
+
+
+//具体为某一种饮料
+ class Espresso extends Beverage
+{
+    public Espresso()
+    {
+        description = "Espresso Coffee";    
+     
+    }
+    
+    public double cost()
+    {
+        return 1.99;
+    }
+}
+
+ class HouseBlend extends Beverage
+{
+    public HouseBlend()
+    {
+        description = "HouseBlend Coffee";    
+     
+    }
+    
+    public double cost()
+    {
+        return 0.99;
+    }
+}
+
+//添加摩卡装饰
+ class Mocha extends CondimentDecorator
+{
+    Beverage beverage;
+    
+    public Mocha(Beverage beverage)
+    {
+        this.beverage = beverage;
+    }
+    
+    public String GetDescription()
+    {
+        return beverage.GetDescription() + ", Mocha";
+    }
+    
+    public double cost()
+    {
+        return .20 + beverage.cost();
+    }
+}
+
+ class Soy extends CondimentDecorator
+{
+    Beverage beverage;
+    
+    public Soy(Beverage beverage)
+    {
+        this.beverage = beverage;
+    }
+    
+    public String GetDescription()
+    {
+        return beverage.GetDescription() + ", Mocha";
+    }
+    
+    public double cost()
+    {
+        return .15 + beverage.cost();
+    }
+}
+
+ class Whip extends CondimentDecorator
+{
+    Beverage beverage;
+    
+    public Whip(Beverage beverage)
+    {
+        this.beverage = beverage;
+    }
+    
+    public String GetDescription()
+    {
+        return beverage.GetDescription() + ", Mocha";
+    }
+    
+    public double cost()
+    {
+        return .10 + beverage.cost();
+    }
+}
+
+ class StarbuzzCoffee
+{
+    public static void main(String args[])
+    {
+        Beverage beverage = new Espresso();
+        System.out.println(beverage.GetDescription() + '$'+beverage.cost());
+        
+        //制造一个Espresso对象
+        Beverage beverage2 = new Espresso();
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Whip(beverage2);
+        System.out.println(beverage2.GetDescription()+'$'+beverage2.cost());
+        
+        //制造一个HouseBlend对象
+        Beverage beverage3 = new HouseBlend();
+        beverage3 = new Mocha(beverage3);
+        beverage3 = new Mocha(beverage3);
+        beverage3 = new Whip(beverage3);
+        System.out.println(beverage3.GetDescription()+'$'+beverage3.cost());
+        
+    }
+}
+
+```
+
+下面为运行结果
+``` java
+Espresso Coffee$1.99
+Espresso Coffee, Mocha, Mocha, Mocha$2.49
+HouseBlend Coffee, Mocha, Mocha, Mocha$1.49
+```
