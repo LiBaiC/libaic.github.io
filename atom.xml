@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://libaicode.com/"/>
-  <updated>2017-03-22T06:57:39.413Z</updated>
+  <updated>2017-05-22T09:29:08.161Z</updated>
   <id>http://libaicode.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://libaicode.com/2017/05/22/HTML_STD/"/>
+    <id>http://libaicode.com/2017/05/22/HTML_STD/</id>
+    <published>2017-05-22T10:09:49.801Z</published>
+    <updated>2017-05-22T09:29:08.161Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTML学习"><a href="#HTML学习" class="headerlink" title="HTML学习"></a>HTML学习</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>HTML指的是超文本标记语言(Hyper Text Markup Language)</p>
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p>&lt;doctype&gt; : 严格、过度、松散标准</p>
+<h3 id="ps-使用Sublime可以快速生成模板-主要有一下几种方法："><a href="#ps-使用Sublime可以快速生成模板-主要有一下几种方法：" class="headerlink" title="ps:使用Sublime可以快速生成模板,主要有一下几种方法："></a>ps:使用Sublime可以快速生成模板,主要有一下几种方法：</h3><p>输入</p>
+<ul>
+<li>html:4t</li>
+<li>html:4s</li>
+<li>html:xs</li>
+<li>html:xt</li>
+<li>html:XXS</li>
+<li>html:5</li>
+</ul>
+<p>按下回车即可生成相应约束模板。</p>
+<p>&lt;html&gt;<br>&lt;head&gt; : 写给机器看<br>&lt;body&gt; : 内容</p>
+<h3 id="div-amp-css"><a href="#div-amp-css" class="headerlink" title="div&amp;css"></a>div&amp;css</h3><p>通俗比喻div声明几个区块,css来定义这块地有多大。div布局,css控制</p>
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>&lt;style&gt;<br>&lt;/style&gt;<br>在style内布局,常见元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">divName</div><div class="line">&#123;</div><div class="line">	填充元素</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>float:left/right                      左右排列对齐;</li>
+<li>clear:left/right/both;             清楚左/右对齐;</li>
+<li>background:red/black…;           区域背景颜色;</li>
+<li>width:100px ,height:100px;         区域长宽;</li>
+<li>margin/margin-top/margin-bottom/margin-left/margin-left;  边界间隔;</li>
+</ul>
+<p>定义一个div类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class = &quot;dClass&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>在style内布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.dclass</div><div class="line">&#123;</div><div class="line">	//统一对某一类div设置</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ol>
+<li>Html注释:&lt;!–&gt;balabala…&lt;–&gt;;</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;HTML学习&quot;&gt;&lt;a href=&quot;#HTML学习&quot; class=&quot;headerlink&quot; title=&quot;HTML学习&quot;&gt;&lt;/a&gt;HTML学习&lt;/h1&gt;&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Unreal Message Bus</title>
