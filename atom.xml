@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://libaicode.com/"/>
-  <updated>2017-05-22T09:29:08.161Z</updated>
+  <updated>2017-05-23T10:22:36.798Z</updated>
   <id>http://libaicode.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://libaicode.com/2017/05/22/HTML_STD/"/>
     <id>http://libaicode.com/2017/05/22/HTML_STD/</id>
     <published>2017-05-22T10:09:49.801Z</published>
-    <updated>2017-05-22T09:29:08.161Z</updated>
+    <updated>2017-05-23T10:22:36.798Z</updated>
     
     <content type="html"><![CDATA[<h1 id="HTML学习"><a href="#HTML学习" class="headerlink" title="HTML学习"></a>HTML学习</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>HTML指的是超文本标记语言(Hyper Text Markup Language)</p>
 <h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p>&lt;doctype&gt; : 严格、过度、松散标准</p>
@@ -36,20 +36,26 @@
 <p>按下回车即可生成相应约束模板。</p>
 <p>&lt;html&gt;<br>&lt;head&gt; : 写给机器看<br>&lt;body&gt; : 内容</p>
 <h3 id="div-amp-css"><a href="#div-amp-css" class="headerlink" title="div&amp;css"></a>div&amp;css</h3><p>通俗比喻div声明几个区块,css来定义这块地有多大。div布局,css控制</p>
-<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>&lt;style&gt;<br>&lt;/style&gt;<br>在style内布局,常见元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">divName</div><div class="line">&#123;</div><div class="line">	填充元素</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="布局元素"><a href="#布局元素" class="headerlink" title="布局元素"></a>布局元素</h3><p>&lt;style&gt;<br>&lt;/style&gt;<br>在style内布局,常见元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">divName</div><div class="line">&#123;</div><div class="line">	填充元素</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="1-块状元素"><a href="#1-块状元素" class="headerlink" title="1.块状元素"></a>1.块状元素</h5><p>独占块状区域</p>
 <ul>
 <li>float:left/right                      左右排列对齐;</li>
 <li>clear:left/right/both;             清楚左/右对齐;</li>
 <li>background:red/black…;           区域背景颜色;</li>
 <li>width:100px ,height:100px;         区域长宽;</li>
 <li>margin/margin-top/margin-bottom/margin-left/margin-left;  边界间隔;</li>
+<li>margin： auto;可实现居中;</li>
+<li>padding                             内边距;</li>
 </ul>
 <p>定义一个div类</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class = &quot;dClass&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
 <p>在style内布局</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.dclass</div><div class="line">&#123;</div><div class="line">	//统一对某一类div设置</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ol>
+<h5 id="2-内联元素"><a href="#2-内联元素" class="headerlink" title="2.内联元素"></a>2.内联元素</h5><p>内联元素,只对每一行的文字起作用,或者说内联的作用范围不能跳出行的区域。<br>1.span<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;</div><div class="line">exp: </div><div class="line">//沧海两个字会被渲染成红色</div><div class="line">&lt;style&gt;</div><div class="line">	#word&#123;</div><div class="line">		color:red;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div&gt;</div><div class="line">	长风破浪会有时，直挂云帆济&lt;span id =&quot;word&quot;&gt;沧海&lt;/span&gt;。&lt;br/&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="块状和内联的转换"><a href="#块状和内联的转换" class="headerlink" title="块状和内联的转换"></a>块状和内联的转换</h3><p>可以使用强制转换:<br>display: block/inline/none;<br>强制转化为：块状、内联、删除</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ol>
 <li>Html注释:&lt;!–&gt;balabala…&lt;–&gt;;</li>
+<li>相邻的普通元素，上下间距，并非简单的相加，而是取较大的边距值，这种现象叫做margin重叠</li>
 </ol>
 ]]></content>
     
